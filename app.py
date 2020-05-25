@@ -10,7 +10,26 @@ def hello():
 @app.route('/',methods=['POST'])
 def func():
     st=request.form["review"]
-    return st
+    english = spacy.load("en_core_web_sm")
+    result = english(st)
+    sentences = [str(s) for s in result.sents]
+    analyzer = vaderSentiment.SentimentIntensityAnalyzer()
+    sentiment = [analyzer.polarity_scores(str(s)) for s in sentences]
+    res=''
+    res+="The statement you just entered is: \n"
+    res+=str(sentiment[0]['pos']*100)+'% positive\n'
+    res+=str(sentiment[0]['neg']*100)+'% negative\n'
+    res+=str(sentiment[0]['neu']*100)+'% neutral\n'
+    
+    if(sentiment[0]['compound'] >= 0.05) : 
+        sent="Positive " 
+    elif(sentiment[0]['compound'] <= - 0.05) : 
+        sent="Negative " 
+    else :
+        sent="Neutral "
+    res+="OVERALL SENTIMENT: "+sent
+    
+    return res
     
 
 @app.route('/<s>')
