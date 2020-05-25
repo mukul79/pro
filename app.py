@@ -1,17 +1,21 @@
-from flask import Flask, render_template, request, url_for, redirect
+import spacy
+from vaderSentiment import vaderSentiment
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
-@app.route('/',methods=["POST","GET"])
+@app.route('/')
 def hello():
-    if(request.method=="POST"):
-        s=request.args['review']
-        return redirect(url_for('hello',s=s))
-    else: 
-        return render_template('index.html')
+    return render_template('index.html')
     
-@app.route('/<usr>')
-def result():
-    return f'<h1>{usr}</h1>'
+@app.route('/',methods=['POST'])
+def func():
+    st=request.form["review"]
+    return st
+    
+
+@app.route('/<s>')
+def result(s):
+    return f'<h1>You just navigated for: {s}</h1>'
     
 if __name__ == '__main__':
     app.run(debug=True)
