@@ -15,14 +15,13 @@ def func():
     sentences = [str(s) for s in result.sents]
     analyzer = vaderSentiment.SentimentIntensityAnalyzer()
     sentiment = [analyzer.polarity_scores(str(s)) for s in sentences]
-    res=''
-    res+="The statement you just entered is: \n"
-    res+=st
+    
     
     if(sentiment[0]['compound'] >= 0.05) : 
         sent="Positive " 
         emoji=128512
         address=' https://st.depositphotos.com/1016482/2236/i/950/depositphotos_22362437-stock-photo-background-with-heap-of-yellow.jpg'
+    
     elif(sentiment[0]['compound'] <= - 0.05) : 
         sent="Negative "
         emoji=128577
@@ -32,9 +31,7 @@ def func():
           sent="Neutral "
           emoji=128528
           address='https://atlas-content-cdn.pixelsquid.com/stock-images/neutral-face-facial-expression-L63Mrq1-600.jpg '
-    res+="    OVERALL SENTIMENT: "+sent
-   
-
+    
     
     return render_template('output.html', sentences=st, sent=sent,emoji=emoji, address=address)
     

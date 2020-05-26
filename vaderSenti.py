@@ -1,5 +1,4 @@
 import spacy
-from flask import Flask
 from vaderSentiment import vaderSentiment
 english = spacy.load("en_core_web_sm")
 result = english(input("Enter the statement: "))
