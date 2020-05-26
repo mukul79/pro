@@ -17,19 +17,26 @@ def func():
     sentiment = [analyzer.polarity_scores(str(s)) for s in sentences]
     res=''
     res+="The statement you just entered is: \n"
-    res+=str(sentiment[0]['pos']*100)+'% positive\n'
-    res+=str(sentiment[0]['neg']*100)+'% negative\n'
-    res+=str(sentiment[0]['neu']*100)+'% neutral\n'
+    res+=st
     
     if(sentiment[0]['compound'] >= 0.05) : 
         sent="Positive " 
+        emoji=128512
+        address=' '
     elif(sentiment[0]['compound'] <= - 0.05) : 
-        sent="Negative " 
+        sent="Negative "
+        emoji=128577
+        address=' '
+        
     else :
-        sent="Neutral "
-    res+="OVERALL SENTIMENT: "+sent
+          sent="Neutral "
+          emoji=128528
+          address=' '
+    res+="    OVERALL SENTIMENT: "+sent
+   
+
     
-    return res
+    return render_template('output.html', sentences=st, sent=sent,emoji=emoji, address=address)
     
 
 @app.route('/<s>')
