@@ -29,10 +29,16 @@
     }
 
     body {
-      background-image: url('https://cdn.analyticsvidhya.com/wp-content/uploads/2018/07/performing-twitter-sentiment-analysis1.jpg');
+      background-image: url({{url_for('static',filename='hfg.jpg')}});
 	  background-repeat:no-repeat;
 	  background-size: cover;
     }
+	.chng{
+	  padding:170px;
+	  text-size:20px;
+	  text-align:center;
+	  }
+	 
   </style>
 </head>
 
@@ -47,6 +53,10 @@
       <input type="text" name="review" placeholder="Enter your text here" maxlength="100" id="review" class="review">
       <button type="submit" name="button" class="button">Submit</button>
     </form>
+	<div class="chng">
+	<a href="fu.html"><button>About Us</button></a><a href="new.html"><button style="margin-left:20px">Info</button></a>
+	
+	</div>
 
   </div>
 

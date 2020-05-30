@@ -5,6 +5,7 @@ result = english(input("Enter the statement: "))
 sentences = [str(s) for s in result.sents]
 analyzer = vaderSentiment.SentimentIntensityAnalyzer()
 sentiment = [analyzer.polarity_scores(str(s)) for s in sentences]
+print(sentiment[0])
 print("The statement you just entered is: ")
 print(sentiment[0]['pos']*100,'% positive')
 print(sentiment[0]['neg']*100,'% negative')

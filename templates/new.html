@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <title>REPORT</title>
+  <style>
+    body {
+      background-image: linear-gradient(-135deg,#7aa1d2,#dbd4b4, #cc95c0);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: black;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .kp {
+      text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    }
+
+    .img { 
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body background>
+  <h1>WHAT IS SENTIMENTAL ANALYSIS?</h1><br>
+  <h3><b><i>Sentiment Analysis, or Opinion Mining, is a sub-field of Natural Language Processing (NLP) that
+        tries to identify and extract opinions within a given text. The aim of sentiment analysis is to
+        gauge the attitude, sentiments, evaluations, attitudes and emotions of a speaker/writer based on
+        the computational treatment of subjectivity in a text.</i></b></h3>
+  <h1>VADER Sentiment Analysis</h1>
+  <div class="kp">
+    <h3><b><i>VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment
+          analysis tool that is specifically attuned to sentiments expressed in social media.</i></b></h3>
+  </div>
+  <h3>VADER has been found to be quite successful when dealing with social media texts, NY
+    Times editorials, movie reviews, and product reviews. This is because VADER not only tells
+    about the Positivity and Negativity score but also tells us about how positive or negative
+    a sentiment is.<br></h3>
+  <h3>
+    It is fully open-sourced under the MIT License. The developers of VADER have used Amazon’s
+    Mechanical Turk to get most of their ratings, You can find complete details on their Github Page.</p><br>
+    <div class="img"><img src={{url_for('static', filename="fc.jpg")}} alt="flowchart" length="400" width="800"></div>
+    <h1>Advantages of Using vADER</h1><br>
+    <h3>VADER has a lot of advantages over traditional methods of Sentiment Analysis, including:</h3>
+
+    <h3>It works exceedingly well on social media type text, yet readily generalizes to multiple domains<h3>
+        <h3>It doesn’t require any training data but is constructed from a generalizable, valence-based, </h3>
+        <h3>human-curated gold standard sentiment lexicon</h3>
+        <h3> It is fast enough to be used online with streaming data, and
+          <h3> It does not severely suffer from a speed-performance tradeoff</h3>
+          <h2>The source code is very easy to understand .paper published by creators of VADER library is here<h2>
+              <a href="http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf"><button>here</button>
+
+</body>
+
+</html>

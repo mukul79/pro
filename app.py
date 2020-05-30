@@ -33,12 +33,16 @@ def func():
           address='https://atlas-content-cdn.pixelsquid.com/stock-images/neutral-face-facial-expression-L63Mrq1-600.jpg '
     
     
-    return render_template('output.html', sentences=st, sent=sent,emoji=emoji, address=address)
+    return render_template('output.html', sentence=st, sent=sent, emoji=emoji, address=address)
     
 
-@app.route('/<s>')
-def result(s):
-    return f'<h1>You just navigated for: {s}</h1>'
-    
+@app.route('/fu.html')
+def result():
+    return render_template('fu.html')
+
+@app.route('/new.html')
+def new():
+    return render_template('new.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
