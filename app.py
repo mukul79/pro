@@ -10,6 +10,8 @@ def hello():
 @app.route('/',methods=['POST'])
 def func():
     st=request.form["review"]
+    if(st==''):
+        return render_template('index.html')
     english = spacy.load("en_core_web_sm")
     result = english(st)
     sentences = [str(s) for s in result.sents]
